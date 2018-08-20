@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- //dsp-rambler.ru/js/jquery/jquery-1.7.2.min.js" -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="ad.size" content="width=1280,height=400">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title></title>
+</head>
+<body>
+	<div class="stage">
+		<div class="left-side">
+			<!-- <img src="car.jpg" alt="a car from "back to the future"> -->
+			<div class="car"></div>
+		</div>
+		<div class="right-side">
+			<div id="right-side-title" class="right-side-title slide1">Выберите вариант и узнайте,<br>что ожидает вас в будущем</div>
+			<div id="classic-title" class="right-side-title slide2 hidden">Через год вы станете знатоком<br>классической музыки</div>
+			<div id="right-side-back">
+							<form id="right-side-form" class="slide1">
+												<label for="action" id="action-label"  class="labels">Если</label>
+												<select id="action" class="selection" name="action">
+														  <option value="answer1">слушать классическую музыку</option>
+														  <option value="answer2">answer2</option>
+														  <option value="answer3">answer3</option>
+														  <option value="answer4">answer4</option>
+												</select><br>
+												<label for="time" id="time-label" class="labels">по 30 минут в день</label>
+												<select id="time" class="selection" name="time" >
+														  <option value="answer1">в течение полугода,</option>
+														  <option value="answer2">answer2</option>
+														  <option value="answer3">answer3</option>
+														  <option value="answer4">answer4</option>
+												</select><br>
+												<input id="submit-button" type="submit" value="Узнать будущее">
+												<!-- <a href="#" id="submit-button">Make Url</a> -->
+								</form>
+								<div class="right-side-subtitle slide2 hidden">А ещё мы точно знаем, что если вы выберите один из телефонов Samsung,<br>то получите классные подарки в салонах связи «Билайн»!</div>
+								<div class="gifts slide2 hidden">
+									<div id="phone" class="gift"></div>
+									<div id="equal" class="gift"></div>
+									<div id="text" class="gift"></div>
+									<div id="plus" class="gift"></div>
+									<div id="earphones" class="gift"></div>								
+								</div>
+								<div class="slide2 hidden">
+									<div id="leftarrow"></div>
+									<div id="rightarrow"></div>	
+								</div>
+								<button id="more-button" class="slide2 block hidden">Подробнее</button>
+			</div>
+		</div>
+		<div class="footer">
+			<p class="disc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, tempora vero ab quisquam quis numquam beatae iure accusamus nostrum cumque eligendi alias molestias, iste voluptate repudiandae voluptas vitae. Explicabo laborum officiis aliquam, saepe illo. Ullam illo nihil laborum voluptatem, laudantium, tempora omnis totam quia ut, corporis alias. Reprehenderit, nihil qui magnam dolorum possimus ratione quisquam, iusto natus fugiat dicta nemo expedita inventore aspernatur. Officiis ad pariatur, non nisi, maiores sit quas sint optio libero itaque laudantium quasi. Inventore voluptates sunt non sed dolorem quos dolores maiores, minima expedita veritatis, dicta est doloremque voluptatem pariatur fugiat aliquam. Esse iusto beatae quaerat quasi modi vel itaque ut debitis! Ut velit cumque, repellendus ipsam quasi </p>
+		</div>
+	</div>
+</body>
+<script>
+	$('#submit-button').click(function(e) {
+    e.preventDefault();
+    var url = $('#action').val() + "_" + $('#time').val();
+     // alert(url);
+     if (url == 'answer1_answer1') {
+     	// alert(url);
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     }
+    // <!-- open(url); -->
+});
+// $("#right-side-title").click(function(){
+//     $("p").toggleClass("hidden");
+// });
+</script>
+</html>
