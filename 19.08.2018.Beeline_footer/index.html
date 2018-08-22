@@ -3,6 +3,7 @@
 <head>
 	<!-- //dsp-rambler.ru/js/jquery/jquery-1.7.2.min.js" -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="greensock.js"></script>
 	<link rel="stylesheet" href="style.css">
 	<meta charset="UTF-8">
 	<meta name="ad.size" content="width=1280,height=400">
@@ -17,23 +18,33 @@
 		</div>
 		<div class="right-side">
 			<div id="right-side-title" class="right-side-title slide1">Выберите вариант и узнайте,<br>что ожидает вас в будущем</div>
-			<div id="classic-title" class="right-side-title slide2 hidden">Через год вы станете знатоком<br>классической музыки</div>
+			<div id="classic-title" class="right-side-title answer11 hidden">Через год вы станете знатоком<br>классической музыки</div>
+			<div id="classic-title" class="right-side-title answer12 hidden">Через неделю вы станете знатоком<br>классической музыки</div>
+			<div id="classic-title" class="right-side-title answer21 hidden">Через год вы станете жирным<br>как коровка</div>
+			<div id="classic-title" class="right-side-title answer22 hidden">Через неделю вы<br>разлюбите булки</div>
+			<div id="classic-title" class="right-side-title answer31 hidden">Через год вы станете курильщиком,<br>это повысит риск рака легких</div>
+			<div id="classic-title" class="right-side-title answer32 hidden">Через год вы станете курильщиком,<br>это повысит риск рака легких</div>
+			<div id="classic-title" class="right-side-title answer41 hidden">Через год вы станете обладателем<br>коллекции красивых штанов</div>
+			<div id="classic-title" class="right-side-title answer42 hidden">вы станете богатым и счастливым<br>носителем красивых штанов</div>
 			<div id="right-side-back">
 							<form id="right-side-form" class="slide1">
 												<label for="action" id="action-label"  class="labels">Если</label>
-												<select id="action" class="selection" name="action">
+												<div id="custom-action" class="custom-select">
+												<!-- <select id="action" class="selection" name="action"> -->
+												<select id="action" name="action">
 														  <option value="answer1">слушать классическую музыку</option>
-														  <option value="answer2">answer2</option>
-														  <option value="answer3">answer3</option>
-														  <option value="answer4">answer4</option>
+														  <option value="answer2">есть булку с маком</option>
+														  <option value="answer3">курить папиросу</option>
+														  <option value="answer4">ходить в красивых штанах</option>
 												</select><br>
+												</div>
 												<label for="time" id="time-label" class="labels">по 30 минут в день</label>
+												<div id="custom-time" class="custom-select" style="width: 300px;margin-top:0;">
 												<select id="time" class="selection" name="time" >
 														  <option value="answer1">в течение полугода,</option>
-														  <option value="answer2">answer2</option>
-														  <option value="answer3">answer3</option>
-														  <option value="answer4">answer4</option>
+														  <option value="answer2">каждый день</option>
 												</select><br>
+	                                            </div>
 												<input id="submit-button" type="submit" value="Узнать будущее">
 												<!-- <a href="#" id="submit-button">Make Url</a> -->
 								</form>
@@ -66,6 +77,42 @@
      	// alert(url);
      	$(".slide1").toggleClass("hidden");
      	$(".slide2").toggleClass("show");
+     	$(".answer11").toggleClass("show");
+     }
+     else if (url == 'answer1_answer2') {
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     	$(".answer12").toggleClass("show");
+     }
+     else if (url == 'answer2_answer1') {
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     	$(".answer21").toggleClass("show");
+     }
+     else if (url == 'answer2_answer2') {
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     	$(".answer22").toggleClass("show");
+     }
+     else if (url == 'answer3_answer1') {
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     	$(".answer31").toggleClass("show");
+     }
+     else if (url == 'answer3_answer2') {
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     	$(".answer32").toggleClass("show");
+     }
+     else if (url == 'answer4_answer1') {
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     	$(".answer41").toggleClass("show");
+     }
+     else if (url == 'answer4_answer2') {
+     	$(".slide1").toggleClass("hidden");
+     	$(".slide2").toggleClass("show");
+     	$(".answer42").toggleClass("show");
      }
     // <!-- open(url); -->
 });
@@ -73,4 +120,124 @@
 //     $("p").toggleClass("hidden");
 // });
 </script>
+<script>
+	var x, i, j, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+  });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+</script>
+<script type="text/javascript">
+			window.onload = function(){
+			var tl = new TimelineLite({onComplete:repeatTimeline});
+			//var maxAnimationTime = 20; //limit the animation time
+			    tl//.set("#", {opacity:0,scale:.7})
+					//.to("#white", .5, {autoAlpha: 0})
+					//.from(".slide1, .car, #right-side-back, .footer", .7, {autoAlpha: 0,ease: Power1.easeIn},"-=.4")
+					.from("#right-side-title", 0.7, {y:-40,opacity:0})
+					.from("#submit-button", 0.7, {autoAlpha: 0,ease: Power1.easeOut},"-=.4")		
+					.from("#action-label", 0.7, {y:-40,autoAlpha: 0,ease: Power1.easeOut},"-=.4")		
+					.from("#custom-action", 0.7, {y:-40,autoAlpha: 0,ease: Power1.easeOut},"-=.4")
+					.from("#time-label", 0.7, {y:-40,autoAlpha: 0,ease: Power1.easeOut},"-=.4")
+					.from("#custom-time", 0.7, {y:-40,autoAlpha: 0,ease: Power1.easeOut},"-=.4")
+					
+
+					.from("#txt111", 0.7, {y:7,autoAlpha: 0,ease: Power1.easeOut},"-=.4")
+					.to("#txt1,#txt11,#txt111,#back1", .9, {autoAlpha: 0,y:15,ease: Power3.easeOut},"+=2")
+					.to("#white", .9, {autoAlpha: 1,ease: Power3.easeOut},"+=4");
+			//tl.pause(11);
+			//tl.play(10);
+			function repeatTimeline(){
+			  //tl.restart();
+			}
+			function stop(){
+			  tl.pause();
+			}
+			//TweenLite.delayedCall(maxAnimationTime, stop); //limit the animation time
+			};
+			$('#submit-button').click(function(e) {
+				var tl2 = new TimelineLite({onComplete:repeatTimeline});
+				tl2.from("#classic-title", 0.6, {y:-20,opacity:0})
+					.from(".right-side-subtitle", 0.6, {y:-20,opacity:0},"-=.4")
+					.from("#phone", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"-=.2")
+					.from("#equal", 0.4, {y:40,opacity:0},"-=.2")
+					.from("#text", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"+=.2")
+					.from("#plus", 0.4, {y:40,opacity:0},"-=.1")
+					.from("#earphones", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"+=.1")
+					.from("#more-button", 0.4, {opacity:0},"-=.5")
+
+				;
+			});
+
+			function repeatTimeline(){
+			  //tl.restart();
+			}
+		</script>
 </html>

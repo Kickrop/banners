@@ -32,6 +32,9 @@ body {
 	-webkit-background-size: cover;
 	background-size: cover;
 }
+.right-side {
+	background-color: #171717;
+}
 .right-side-title {
 	background: #171717;
 	color: #fff;
@@ -56,7 +59,7 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbaf01', endColorstr='#fedc00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 250px;
 }
-.selection {
+/*.selection {
 	border: 3px solid #fff;
 	border-radius: 20px;
 	background: transparent;
@@ -66,11 +69,87 @@ body {
 	padding: 7px;
 	outline: none;
 	cursor: pointer;
+}*/
+/**/
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  display: inline-block;
+  /*border-radius: 20px;*/
+  width: 414px;
+  /*height: 46px;*/
+  margin-left: 21px;
+  margin-top:  10px;
+  z-index: 10;
 }
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: transparent;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  /*padding: 7px;*/
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 38px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #2a2a2a transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #2a2a2a transparent;
+  top: 31px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #1e1e1c;
+  /*padding: 0 16px 20px 16px;*/
+ /* border: 1px solid transparent;
+  border-color: transparent transparent rgba(255, 255, 255, 0.7) transparent;*/
+  cursor: pointer;
+/*  border: 3px solid #fff;
+  border-radius: 20px;*/
+  font-size: 22px;
+  font-weight: 600;
+  padding: 7px 14px 7px 20px;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: rgb(253, 202, 0);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 98;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-radius: 20px;
+
+}
+#custom-action {
+	z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/**/
 .labels {
 	color: #1d1d1b;
 	font-size: 22px;
 	font-weight: 600;
+	display: inline-block;
 }
 #action {
 	margin-left: 21px;
@@ -100,7 +179,14 @@ body {
 	margin-top: 25px;*/
 	margin: 25px auto 0 auto;
 	display: block;
+	-webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
 }
+#submit-button:hover {
+	-webkit-filter: drop-shadow(0px 0px 8px rgba(182, 69, 175, 0.8));
+	}
 .gifts {
 	text-align: center;
 	margin-top: 13px;
@@ -181,6 +267,13 @@ body {
 /*	margin-left: 236px;
 	margin-top: 10px;*/
 	margin: 5px auto 10px auto;
+	-webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+#more-button:hover {
+	-webkit-filter: drop-shadow(0px 0px 8px rgba(182, 69, 175, 0.8));
 }
 .block { 
 	display: block;
