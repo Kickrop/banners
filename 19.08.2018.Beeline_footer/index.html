@@ -64,7 +64,8 @@
 			</div>
 		</div>
 		<div class="footer">
-			<p class="disc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, tempora vero ab quisquam quis numquam beatae iure accusamus nostrum cumque eligendi alias molestias, iste voluptate repudiandae voluptas vitae. Explicabo laborum officiis aliquam, saepe illo. Ullam illo nihil laborum voluptatem, laudantium, tempora omnis totam quia ut, corporis alias. Reprehenderit, nihil qui magnam dolorum possimus ratione quisquam, iusto natus fugiat dicta nemo expedita inventore aspernatur. Officiis ad pariatur, non nisi, maiores sit quas sint optio libero itaque laudantium quasi. Inventore voluptates sunt non sed dolorem quos dolores maiores, minima expedita veritatis, dicta est doloremque voluptatem pariatur fugiat aliquam. Esse iusto beatae quaerat quasi modi vel itaque ut debitis! Ut velit cumque, repellendus ipsam quasi </p>
+			<p class="disc">Galaxy — Гэлакси. С 06.08.2018 по 16.09.2018 при покупке смартфонов Samsung Galaxy в офисах продаж «Билайн» абоненту предоставляется скидка на смартфон в размере стоимости оплаченных им услуг связи по ТП «ВCЁмоё 2» или «ВCЁмоё 3» на срок 1–2 мес. и подарок — квадрокоптер / беспроводные наушники / bluetooth-колонка. Набор из подарка и скидки зависит от модели смартфона и филиала подключения. Количество оборудования и подарков ограничено. Подробнее об организаторе акции, правилах, ограничениях, сроках и месте ее проведения, а также перечень участвующего оборудования и офисов продаж — на beeline.ru. ПАО «ВымпелКом», РФ, 127083, Москва, ул. Восьмого Марта, д. 10, стр. 14, ОГРН 1027700166636.</p>
+			<div class="footer-logo"></div>
 		</div>
 	</div>
 </body>
@@ -202,7 +203,7 @@ document.addEventListener("click", closeAllSelect);
 					//.to("#white", .5, {autoAlpha: 0})
 					//.from(".slide1, .car, #right-side-back, .footer", .7, {autoAlpha: 0,ease: Power1.easeIn},"-=.4")
 					.from("#right-side-title", 0.7, {y:-40,opacity:0})
-					.from("#submit-button", 0.7, {autoAlpha: 0,ease: Power1.easeOut},"-=.4")		
+					.to("#submit-button", 0.7, {autoAlpha: 1,ease: Power1.easeOut},"-=.4")		
 					.from("#action-label", 0.7, {y:-40,autoAlpha: 0,ease: Power1.easeOut},"-=.4")		
 					.from("#custom-action", 0.7, {y:-40,autoAlpha: 0,ease: Power1.easeOut},"-=.4")
 					.from("#time-label", 0.7, {y:-40,autoAlpha: 0,ease: Power1.easeOut},"-=.4")
@@ -227,11 +228,11 @@ document.addEventListener("click", closeAllSelect);
 				tl2.from("#classic-title", 0.6, {y:-20,opacity:0})
 					.from(".right-side-subtitle", 0.6, {y:-20,opacity:0},"-=.4")
 					.from("#phone", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"-=.2")
-					.from("#equal", 0.4, {y:40,opacity:0},"-=.2")
-					.from("#text", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"+=.2")
-					.from("#plus", 0.4, {y:40,opacity:0},"-=.1")
-					.from("#earphones", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"+=.1")
-					.from("#more-button", 0.4, {opacity:0},"-=.5")
+					.from("#equal", 0.5, {y:40,opacity:0},"-=.2")
+					.from("#text", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"-=.2")
+					.from("#plus", 0.5, {y:40,opacity:0},"-=.1")
+					.from("#earphones", 0.6, {y:40,opacity:0,ease: Back.easeOut.config(1.7)},"-=.2")
+					.to("#more-button", 0.4, {opacity:1},"-=.5")
 
 				;
 			});
