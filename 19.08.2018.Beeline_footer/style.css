@@ -331,4 +331,10 @@ body {
 	#custom-action {
 		max-width: 700px;
 	}
+	#action-label {
+		margin-left: 120px;
+	}
+	#time-label {
+		margin-left: 110px;
+	}
 }
