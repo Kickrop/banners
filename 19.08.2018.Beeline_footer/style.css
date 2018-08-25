@@ -338,3 +338,11 @@ body {
 		margin-left: 110px;
 	}
 }
+@media all and (min-width: 1460px){ 
+	#action-label {
+		margin-left: 22%;
+	}
+	#time-label {
+		margin-left: 20%;
+	}
+	Ъ
