@@ -347,19 +347,25 @@ body {
 		margin-left: 20%;
 	}
 }
-@media all and (max-width: 860px){ 
+@media all and (max-width: 1160px){ 
 .left-side {
 	width:30%;
 }
 .right-side {
 	width: 70%;
 }
+.disc {
+	font-size: 8px;
 }
-@media all and (max-width: 550px){ 
+}
+@media all and (max-width: 850px){ 
 .left-side {
 	width:0%;
 }
 .right-side {
 	width: 100%;
 }
+#action-label {
+		margin-right: 20px;
+	}
 }
