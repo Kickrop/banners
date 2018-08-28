@@ -154,6 +154,10 @@ body {
 	z-index: 99;
 	max-width: 415px;
 }
+#custom-time {
+	width:300px;
+	margin-top: 0;
+}
 /*hide the items when the select box is closed:*/
 .select-hide {
   display: none;
@@ -368,4 +372,46 @@ body {
 #action-label {
 		margin-right: 20px;
 	}
+.disc {
+	font-size: 7px;
+}
+}
+@media all and (max-width: 592px){ 
+#action-label {
+margin-left: ;
+}
+#custom-action {
+	width:270px;
+	margin-top: -10px;
+}
+#custom-time {
+	width:200px;
+	margin-left: 40px;
+	margin-top: -10px;
+}
+.select-selected, .labels {
+	font-size: 15px;
+}
+.labels {
+	margin-top: 10px;
+}
+#submit-button {
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 25px;
+	padding: 8px 18px 8px 18px;
+	margin-top: 10px;
+}
+#right-side-title {
+	font-size: 20px;
+}
+#right-side-back {
+	height: 200px;
+}
+.select-items div {
+	font-size: 15px;
+}
+.disc {
+	padding: 6px 75px 6px 10px;
+}
 }
