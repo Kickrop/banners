@@ -375,8 +375,23 @@ body {
 .disc {
 	font-size: 7px;
 }
+.select-items div {
+	font-size: 18px;
 }
-@media all and (max-width: 592px){ 
+.select-selected, .labels {
+	font-size: 18px;
+}
+#custom-action {
+	width:325px;
+	margin-top: 10px;
+}
+#custom-time {
+	width:240px;
+	margin-left: 40px;
+	
+}
+}
+@media all and (max-width: 422px){ 
 #action-label {
 margin-left: ;
 }
