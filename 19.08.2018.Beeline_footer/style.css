@@ -384,6 +384,7 @@ body {
 #custom-action {
 	width:325px;
 	margin-top: 10px;
+	margin-right: 0%;
 }
 #custom-time {
 	width:240px;
@@ -391,13 +392,14 @@ body {
 	
 }
 }
-@media all and (max-width: 422px){ 
+@media all and (max-width: 516px){ 
 #action-label {
 margin-left: ;
 }
 #custom-action {
-	width:270px;
+	width:280px;
 	margin-top: -10px;
+	margin-right: 0;
 }
 #custom-time {
 	width:200px;
