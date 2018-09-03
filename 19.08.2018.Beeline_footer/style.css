@@ -18,7 +18,8 @@ body {
 	/*max-width: 1270px;*/
 	width:100%;
 	height: 400px;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	border: 5px solid #fedc00;
 	overflow: hidden;
 }
@@ -44,7 +45,6 @@ body {
 	background-image: url(car.jpg);	
 	width:100%;
 	height: 343px;
-	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: bottom center;
 }
@@ -68,9 +68,9 @@ body {
 	padding: 16px 30px 0 30px;
 }
 #right-side-back {
-	background: #fbaf01; /* Old browsers */
-    background: -moz-linear-gradient(45deg, #fbaf01 0%, #fedc00 100%); /* FF3.6-15 */
+	background: #fbaf01; /* Old browsers */ /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, #fbaf01 0%,#fedc00 100%); /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(45deg, #fbaf01 0%,#fedc00 100%);
     background: linear-gradient(45deg, #fbaf01 0%,#fedc00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbaf01', endColorstr='#fedc00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 250px;
@@ -203,6 +203,7 @@ body {
 	-webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
 	-webkit-transition: all 0.5s linear;
 	-o-transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
 	transition: all 0.3s linear;
 }
 #submit-button:hover {
@@ -293,6 +294,7 @@ body {
 	-webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
 	-webkit-transition: all 0.5s linear;
 	-o-transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
 	transition: all 0.3s linear;
 }
 #more-button:hover {
@@ -390,6 +392,9 @@ body {
 	width:240px;
 	margin-left: 40px;
 	
+}
+.right-side-subtitle {
+font-size: 12px;
 }
 }
 @media all and (max-width: 516px){ 
